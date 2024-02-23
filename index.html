@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HOJE TEM? </title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: #3498db; /* Cor de fundo azul */
+        }
+
+        #content {
+            text-align: center;
+        }
+
+        #content p {
+            font-size: 50px; /* Tamanho da fonte aumentado */
+            font-weight: bold; /* Texto em negrito */
+            color: rgb(0, 0, 0); /* Cor do texto */
+        }
+
+        #naoButton {
+            margin-top: 20px;
+            position: relative;
+            width: 150px; /* Largura aumentada */
+            height: 50px; /* Altura aumentada */
+            font-size: 24px; /* Tamanho da fonte aumentado */
+        }
+
+        #simButton {
+            margin-top: 20px;
+            width: 150px; /* Largura aumentada */
+            height: 50px; /* Altura aumentada */
+            font-size: 24px; /* Tamanho da fonte aumentado */
+        }
+    </style>
+</head>
+<body>
+
+    <div id="content">
+        <p> HOJE TEM CUZINHO?</p>
+        <button id="simButton">SIM</button>
+        <button id="naoButton">NÃO</button>
+    </div>
+    
+    <script>
+        document.getElementById("simButton").addEventListener("click", function() {
+            // Redirecionar para o link do YouTube ao clicar no botão "SIM"
+            window.location.href = "https://youtube.com/shorts/6yN2fvb66vQ?feature=shared";
+        });
+
+        document.getElementById("naoButton").addEventListener("click", function() {
+            // Obter a posição central da tela
+            var centerX = window.innerWidth / 2;
+            var centerY = window.innerHeight / 2;
+
+            // Definir uma margem de segurança para manter o botão completamente visível
+            var marginX = 50;
+            var marginY = 50;
+
+            // Gerar uma posição aleatória dentro da área central da tela
+            var randomTop = Math.floor(Math.random() * (centerY - marginY)) + marginY;
+            var randomLeft = Math.floor(Math.random() * (centerX - marginX)) + marginX;
+
+            // Aplicar a nova posição ao botão "NÃO"
+            var naoButton = document.getElementById("naoButton");
+            naoButton.style.top = randomTop + "px";
+            naoButton.style.left = randomLeft + "px";
+        });
+    </script>
+    
+</body>
+</html>
